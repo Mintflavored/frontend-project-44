@@ -34,3 +34,5 @@ const askQuestion = () => {
 };
 
 export default askQuestion;
+
+askQuestion();
