@@ -6,9 +6,4 @@ const greetUser = () => {
     return userName;
 };
 
-const name = () => {
-    const user = greetUser();
-    return user;
-};
-
-export {greetUser, name};
+export default greetUser;
