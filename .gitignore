@@ -1,2 +1,3 @@
 # Игнорировать директорию node_modules
 node_modules/
+demo.cast
