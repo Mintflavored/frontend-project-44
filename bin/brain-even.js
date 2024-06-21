@@ -8,10 +8,11 @@ const askQuestion = () => {
     for (let i = 0; i < 3; i += 1) {
         const num = Math.floor(Math.random() * 15) + 1;
         console.log(`Question: ${num}`);
-        const answer = readlineSync.question('Your answer: ').toLowerCase();
+        const answer = readlineSync.question('Your answer (yes/no): ').toLowerCase();
 
         if (answer !== 'yes' && answer !== 'no') {
-            console.log('Your answer is wrong, use yes or no.');
+            console.log('Invalid answer. Please use "yes" or "no".');
+            console.log(`Let's try again, ${userName}!`);
             return false;
         }
 
@@ -21,16 +22,15 @@ const askQuestion = () => {
         if (answer === correctAnswer) {
             correctAnswersCount += 1;
             console.log('Correct!');
-            if (correctAnswersCount === 3) {
-                console.log(`Congratulations, ${userName}!`);
-            }
         } else {
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
             console.log(`Let's try again, ${userName}!`);
-            correctAnswersCount = 0;
             return false;
         }
     }
+
+    console.log(`Congratulations, ${userName}!`);
+    return true;
 };
 
 export default askQuestion;
