@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-const askQuestion = (userName) => {
+const askQuestion = () => {
 
     for (let i = 0; i < 3; i += 1) {
         const num = Math.floor(Math.random() * 15) + 1;
@@ -10,7 +10,7 @@ const askQuestion = (userName) => {
 
         if (answer !== 'yes' && answer !== 'no') {
             console.log('Invalid answer. Please use "yes" or "no".');
-            console.log(`Let's try again, ${userName}!`);
+            console.log(`Let's try again!`);
             return false;
         }
 
@@ -21,12 +21,12 @@ const askQuestion = (userName) => {
             console.log('Correct!');
         } else {
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-            console.log(`Let's try again, ${userName}!`);
+            console.log(`Let's try again`);
             return false;
         }
     }
 
-    console.log(`Congratulations, ${userName}!`);
+    console.log(`Congratulations!`);
     return true;
 };
 
