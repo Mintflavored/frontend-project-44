@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { userName } from '../src/cli.js';
 
-const askQuestion = () => {
+const askQuestion = (userName) => {
 
     for (let i = 0; i < 3; i += 1) {
         const num = Math.floor(Math.random() * 15) + 1;
@@ -32,5 +31,3 @@ const askQuestion = () => {
 };
 
 export default askQuestion;
-
-askQuestion();
