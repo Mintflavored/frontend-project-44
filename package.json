@@ -15,6 +15,7 @@
     "brain-even": "bin/brain-even.js"
   },
   "dependencies": {
+    "brain-even": "^0.1.12",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
