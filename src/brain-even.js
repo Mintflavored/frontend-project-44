@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
+import { userName } from '../src/cli.js';
 
-const askQuestion = (userName) => {
+const askQuestion = () => {
     for (let i = 0; i < 3; i += 1) {
         const num = Math.floor(Math.random() * 15) + 1;
         console.log(`Question: ${num}`);
