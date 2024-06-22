@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import askQuestion from '../games/brain-even.js';
+import even from '../games/brain-even.js';
 
-askQuestion();
+even();
