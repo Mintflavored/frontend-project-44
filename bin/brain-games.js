@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import askUserName, { userName } from '../src/cli.js';
-import askQuestion from '../src/brain-even.js';
+import { askUserName, userName } from '../src/cli.js';
+import askQuestion from '../games/brain-even.js';
 
 console.log('Welcome to the Brain Games!');
 askUserName();

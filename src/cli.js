@@ -9,5 +9,4 @@ const askUserName = () => {
     return userName;
 };
 
-export default askUserName;
-export { userName };
+export { askUserName, userName }
