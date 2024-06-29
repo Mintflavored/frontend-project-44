@@ -18,7 +18,9 @@ const even = () => {
         const isEven = num % 2 === 0;
         const correctAnswer = isEven ? 'yes' : 'no';
 
-        checkAnswer(answer, correctAnswer, userName);
+        if (!checkAnswer(answer, correctAnswer, userName)) {
+            return;
+        }
     }
 
     console.log(`Congratulations, ${userName}!`);
