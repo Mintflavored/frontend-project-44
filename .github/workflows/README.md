@@ -1,6 +1,6 @@
 # Automatic tests
-brain-even
-
+# brain-even
+https://asciinema.org/a/pqIBdf4QChW98RaElIa8KU7ss
 
 # brain-calc
 https://asciinema.org/a/M4TtJ63Y9JXXeSVQZbaDoU76m
