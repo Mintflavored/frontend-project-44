@@ -7,6 +7,7 @@ const even = () => {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     for (let i = 0; i < 3; i += 1) {
         const num = getRandomNumber(1, 15);
+
         askQuestion(num)
 
         if (answer !== 'yes' && answer !== 'no') {
