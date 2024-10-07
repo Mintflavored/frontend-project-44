@@ -27,7 +27,7 @@ const calc = () => {
       default:
         break;
     }
-    
+
     if (!checkAnswer(answer, correctAnswer.toString(), userName)) {
       return false;
     }
