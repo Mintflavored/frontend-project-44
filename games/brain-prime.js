@@ -13,12 +13,12 @@ const isPrime = (num) => {
 
 const prime = () => {
   askUserName();
-  const answer = getAnswer();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let i = 0; i < 3; i += 1) {
     const number = getRandomNumber(1, 10);
     askQuestion(number);
+    const answer = getAnswer();
     const correctAnswer = isPrime(number) ? 'yes' : 'no';
     if (!checkAnswer(answer, correctAnswer, getUserName())) {
       return false;

@@ -24,7 +24,6 @@ const hideNumber = (progression) => {
 
 const progression = () => {
   askUserName();
-  const answer = getAnswer();
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
     const start = getRandomNumber(1, 50);
@@ -33,6 +32,7 @@ const progression = () => {
     const prog = generateProgression(start, step, length);
     const { question, answer: correctAnswer } = hideNumber(prog);
     askQuestion(question);
+    const answer = getAnswer();
     if (!checkAnswer(answer, correctAnswer.toString(), getUserName())) {
       return false;
     }
