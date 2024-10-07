@@ -1,5 +1,5 @@
 import { getUserName, askUserName } from '../src/cli.js';
-import { getRandomNumber } from '../src/random.js';
+import getRandomNumber from '../src/random.js';
 import checkAnswer from '../src/checkAnswer.js';
 import { getAnswer, askQuestion } from '../src/question.js';
 
@@ -22,7 +22,7 @@ const even = () => {
     }
 
     const correctAnswer = isEven(num) ? 'yes' : 'no';
-    
+ 
     if (!checkAnswer(answer, correctAnswer, getUserName())) {
       return false;
     }

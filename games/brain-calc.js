@@ -1,7 +1,7 @@
 import checkAnswer from '../src/checkAnswer.js';
 import { getUserName, askUserName } from '../src/cli.js';
 import { askQuestion, getAnswer } from '../src/question.js';
-import { getRandomNumber } from '../src/random.js';
+import getRandomNumber from '../src/random.js';
 
 const calc = () => {
   askUserName();

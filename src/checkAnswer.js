@@ -1,4 +1,4 @@
-import { getUserName } from '../src/cli.js';
+import { getUserName } from './cli.js';
 
 const checkAnswer = (answer, correctAnswer) => {
   const strAnswer = String(answer);
