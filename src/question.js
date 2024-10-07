@@ -5,9 +5,12 @@ let answer = '';
 const askQuestion = (num) => {
   console.log(`Question: ${num}`);
   answer = readlineSync.question('Your answer: ').toLowerCase();
-  return answer;
 };
 
-const getAnswer = () => answer;
+const getAnswer = () => {
+  const currentAnswer = answer;
+  answer = '';
+  return currentAnswer;
+};
 
 export { getAnswer, askQuestion };
