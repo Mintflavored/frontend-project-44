@@ -11,7 +11,7 @@ const even = () => {
 
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomNumber(1, 15);
-    askQuestion(`${num}`);
+    askQuestion(num);
 
     const answer = getAnswer();
 
