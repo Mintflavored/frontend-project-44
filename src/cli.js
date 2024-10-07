@@ -11,4 +11,6 @@ const askUserName = () => {
   return userName;
 };
 
-export { askUserName, userName };
+const getUserName = () => userName;
+
+export { askUserName, getUserName };

@@ -1,6 +1,6 @@
-import { checkAnswer } from '../src/checkAnswer.js';
-import { userName, askUserName } from '../src/cli.js';
-import { askQuestion, answer } from '../src/question.js';
+import checkAnswer from '../src/checkAnswer.js';
+import { getUserName, askUserName } from '../src/cli.js';
+import { askQuestion, getAnswer } from '../src/question.js';
 import { getRandomNumber } from '../src/random.js';
 
 const generateProgression = (start, step, length) => {
@@ -24,6 +24,7 @@ const hideNumber = (progression) => {
 
 const progression = () => {
   askUserName();
+  const answer = getAnswer();
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
     const start = getRandomNumber(1, 50);
@@ -32,11 +33,11 @@ const progression = () => {
     const prog = generateProgression(start, step, length);
     const { question, answer: correctAnswer } = hideNumber(prog);
     askQuestion(question);
-    if (!checkAnswer(answer, correctAnswer.toString(), userName)) {
+    if (!checkAnswer(answer, correctAnswer.toString(), getUserName())) {
       return false;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${getUserName()}!`);
   return true;
 };
 

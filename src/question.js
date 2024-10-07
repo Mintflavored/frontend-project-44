@@ -8,4 +8,6 @@ const askQuestion = (num) => {
   return answer;
 };
 
-export { answer, askQuestion };
+const getAnswer = () => answer;
+
+export { getAnswer, askQuestion };

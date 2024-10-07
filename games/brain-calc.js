@@ -1,6 +1,6 @@
-import { checkAnswer } from '../src/checkAnswer.js';
-import { userName, askUserName } from '../src/cli.js';
-import { askQuestion, answer } from '../src/question.js';
+import checkAnswer from '../src/checkAnswer.js';
+import { getUserName, askUserName } from '../src/cli.js';
+import { askQuestion, getAnswer } from '../src/question.js';
 import { getRandomNumber } from '../src/random.js';
 
 const calc = () => {
@@ -13,6 +13,7 @@ const calc = () => {
     const randomIndex = Math.floor(Math.random() * operations.length);
     const operation = operations[randomIndex];
     askQuestion(`${num1} ${operation} ${num2}`);
+    const answer = getAnswer();
     let correctAnswer;
     switch (operation) {
       case '+':
@@ -28,11 +29,11 @@ const calc = () => {
         break;
     }
 
-    if (!checkAnswer(answer, correctAnswer.toString(), userName)) {
+    if (!checkAnswer(answer, correctAnswer.toString(), getUserName())) {
       return false;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${getUserName()}!`);
   return true;
 };
 
