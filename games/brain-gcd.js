@@ -17,7 +17,7 @@ const gcd = () => {
         const num1 = getRandomNumber(1, 15);
         const num2 = getRandomNumber(1, 15);
 
-        askQuestion(`${num1}, ${num2}`)
+        askQuestion(`${num1} ${num2}`)
         const correctAnswer = gcdTwoNumbers(num1, num2);
 
         if (!checkAnswer(answer, correctAnswer, userName)) {
