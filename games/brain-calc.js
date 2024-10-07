@@ -13,7 +13,7 @@ const calc = () => {
         const randomIndex = Math.floor(Math.random() * operations.length);
         const operation = operations[randomIndex];
 
-        askQuestion(`${num1}  ${operation}  ${num2}`)
+        askQuestion(`${num1} ${operation} ${num2}`)
         let correctAnswer;
 
         switch (operation) {
@@ -28,7 +28,7 @@ const calc = () => {
                 break;
     }
     
-    if (!checkAnswer(answer, correctAnswer, userName)) {
+    if (!checkAnswer(answer, correctAnswer.toString(), userName)) {
         return;
     }
     }
