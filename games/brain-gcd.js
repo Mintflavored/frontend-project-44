@@ -1,5 +1,5 @@
 import { checkAnswer } from "../src/checkAnswer.js";
-import { userName } from "../src/cli.js";
+import { userName, askUserName } from '../src/cli.js';
 import { askQuestion, answer } from "../src/question.js";
 import { getRandomNumber } from "../src/random.js";
 
@@ -11,6 +11,7 @@ const gcdTwoNumbers = (a, b) => {
 };
 
 const gcd = () => {
+    askUserName();
     console.log('Find the greatest common divisor of given numbers.');
     for (let i = 0; i < 3; i += 1) {
         const num1 = getRandomNumber(1, 15);

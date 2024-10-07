@@ -1,5 +1,5 @@
 import { checkAnswer } from "../src/checkAnswer.js";
-import { userName } from "../src/cli.js";
+import { userName, askUserName } from '../src/cli.js';
 import { askQuestion, answer } from "../src/question.js";
 import { getRandomNumber } from "../src/random.js";
 
@@ -23,6 +23,7 @@ const hideNumber = (progression) => {
 };
     
 const progression = () => {
+    askUserName();
     console.log('What number is missing in the progression?');
     for (let i = 0; i < 3; i += 1) {
         const start = getRandomNumber(1, 50);

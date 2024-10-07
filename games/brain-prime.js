@@ -1,5 +1,5 @@
 import { checkAnswer } from "../src/checkAnswer.js";
-import { userName } from "../src/cli.js";
+import { userName, askUserName } from '../src/cli.js';
 import { askQuestion, answer } from "../src/question.js";
 import { getRandomNumber } from "../src/random.js";
 
@@ -12,6 +12,7 @@ const isPrime = (num) => {
 };
 
 const prime = () => {
+    askUserName();
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".')
   
     for (let i = 0; i < 3; i += 1) {

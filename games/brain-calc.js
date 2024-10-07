@@ -1,9 +1,10 @@
 import { checkAnswer } from "../src/checkAnswer.js";
-import { userName } from "../src/cli.js";
+import { userName, askUserName } from '../src/cli.js';
 import { askQuestion, answer } from "../src/question.js";
 import { getRandomNumber } from "../src/random.js";
 
 const calc = () => {
+    askUserName();
     console.log("What is the result of the expression?");
     for (let i = 0; i < 3; i += 1) {
         const num1 = getRandomNumber(1, 10);
