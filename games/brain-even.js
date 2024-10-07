@@ -22,7 +22,7 @@ const even = () => {
     }
 
     const correctAnswer = isEven(num) ? 'yes' : 'no';
- 
+
     if (!checkAnswer(answer, correctAnswer, getUserName())) {
       return false;
     }
