@@ -1,7 +1,7 @@
-import checkAnswer from '../src/checkAnswer.js';
-import { getUserName, askUserName } from '../src/cli.js';
-import { askQuestion, getAnswer } from '../src/question.js';
+import runGame from '../src/index.js';
 import getRandomNumber from '../src/random.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) return false;
@@ -11,21 +11,11 @@ const isPrime = (num) => {
   return true;
 };
 
-const prime = () => {
-  askUserName();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  for (let i = 0; i < 3; i += 1) {
-    const number = getRandomNumber(1, 10);
-    askQuestion(number);
-    const answer = getAnswer();
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-    if (!checkAnswer(answer, correctAnswer, getUserName())) {
-      return false;
-    }
-  }
-  console.log(`Congratulations, ${getUserName()}!`);
-  return true;
+const generateRound = () => {
+  const number = getRandomNumber(1, 10);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  
+  return [number, correctAnswer];
 };
 
-export default prime;
+export default () => runGame(description, generateRound);

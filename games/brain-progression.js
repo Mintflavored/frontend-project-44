@@ -1,7 +1,7 @@
-import checkAnswer from '../src/checkAnswer.js';
-import { getUserName, askUserName } from '../src/cli.js';
-import { askQuestion, getAnswer } from '../src/question.js';
+import runGame from '../src/index.js';
 import getRandomNumber from '../src/random.js';
+
+const description = 'What number is missing in the progression?';
 
 const generateProgression = (start, step, length) => {
   const progression = [];
@@ -11,34 +11,19 @@ const generateProgression = (start, step, length) => {
   return progression;
 };
 
-const hideNumber = (progression) => {
+const generateRound = () => {
+  const start = getRandomNumber(1, 50);
+  const step = getRandomNumber(1, 10);
+  const length = getRandomNumber(5, 10);
+  const progression = generateProgression(start, step, length);
+  
   const hiddenIndex = getRandomNumber(0, progression.length - 1);
-  const hiddenNumber = progression[hiddenIndex];
-  const questionProgression = [...progression];
-  questionProgression[hiddenIndex] = '..';
-  return {
-    question: questionProgression.join(' '),
-    answer: hiddenNumber,
-  };
+  const correctAnswer = progression[hiddenIndex].toString();
+  
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
+  
+  return [question, correctAnswer];
 };
 
-const progression = () => {
-  askUserName();
-  console.log('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
-    const start = getRandomNumber(1, 50);
-    const step = getRandomNumber(1, 10);
-    const length = getRandomNumber(5, 10);
-    const prog = generateProgression(start, step, length);
-    const { question, answer: correctAnswer } = hideNumber(prog);
-    askQuestion(question);
-    const answer = getAnswer();
-    if (!checkAnswer(answer, correctAnswer.toString(), getUserName())) {
-      return false;
-    }
-  }
-  console.log(`Congratulations, ${getUserName()}!`);
-  return true;
-};
-
-export default progression;
+export default () => runGame(description, generateRound);
