@@ -13,10 +13,10 @@ const findGcd = (a, b) => {
 const generateRound = () => {
   const num1 = getRandomNumber(1, 15);
   const num2 = getRandomNumber(1, 15);
-  
+
   const question = `${num1} ${num2}`;
   const correctAnswer = findGcd(num1, num2).toString();
-  
+
   return [question, correctAnswer];
 };
 

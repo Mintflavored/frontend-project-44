@@ -6,7 +6,6 @@ const runGame = (gameDescription, generateRound) => {
   console.log(gameDescription);
 
   const roundsCount = 3;
-  
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = generateRound();
     console.log(`Question: ${question}`);

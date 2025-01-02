@@ -22,10 +22,10 @@ const generateRound = () => {
   const num1 = getRandomNumber(1, 10);
   const num2 = getRandomNumber(1, 10);
   const operation = operations[getRandomNumber(0, operations.length - 1)];
-  
+
   const question = `${num1} ${operation} ${num2}`;
   const correctAnswer = calculate(num1, num2, operation).toString();
-  
+
   return [question, correctAnswer];
 };
 
