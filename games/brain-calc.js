@@ -26,6 +26,8 @@ const calculate = () => {
         correctAnswer = num1 * num2;
         break;
       default:
+        correctAnswer = 0;
+        console.error('Неверная операция');
         break;
     }
 
