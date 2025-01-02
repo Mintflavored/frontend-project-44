@@ -3,7 +3,7 @@ import { getUserName, askUserName } from '../src/cli.js';
 import { askQuestion, getAnswer } from '../src/question.js';
 import getRandomNumber from '../src/random.js';
 
-const calc = () => {
+const calculate = () => {
   askUserName();
   console.log('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
@@ -37,4 +37,4 @@ const calc = () => {
   return true;
 };
 
-export default calc;
+export default calculate;
